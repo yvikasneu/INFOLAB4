@@ -81,6 +81,8 @@ public class FormPanel extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        messageLabel2 = new javax.swing.JLabel();
+        dateInput = new com.toedter.calendar.JDateChooser();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -163,6 +165,8 @@ public class FormPanel extends javax.swing.JPanel {
             }
         });
 
+        messageLabel2.setText("Date");
+
         javax.swing.GroupLayout mainPanel1Layout = new javax.swing.GroupLayout(mainPanel1);
         mainPanel1.setLayout(mainPanel1Layout);
         mainPanel1Layout.setHorizontalGroup(
@@ -174,22 +178,6 @@ public class FormPanel extends javax.swing.JPanel {
             .addGroup(mainPanel1Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanel1Layout.createSequentialGroup()
-                        .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainPanel1Layout.createSequentialGroup()
-                                .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(firstNameInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(firstNameLabel1)
-                                    .addComponent(ageInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ageLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lastNameInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lastNameLabel1)
-                                    .addComponent(emailInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(emailLabel1))))
-                        .addGap(68, 68, 68))
                     .addGroup(mainPanel1Layout.createSequentialGroup()
                         .addComponent(submitButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -206,8 +194,7 @@ public class FormPanel extends javax.swing.JPanel {
                             .addComponent(patientTypeLabel, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(204, 204, 204))
                     .addGroup(mainPanel1Layout.createSequentialGroup()
-                        .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(messageLabel1)
+                        .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(mainPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(134, 134, 134)
@@ -218,8 +205,28 @@ public class FormPanel extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(jRadioButton3)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton4)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(jRadioButton4))))
+                            .addGroup(mainPanel1Layout.createSequentialGroup()
+                                .addComponent(messageLabel1)
+                                .addGap(301, 301, 301)
+                                .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dateInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(messageLabel2))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainPanel1Layout.createSequentialGroup()
+                        .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(firstNameInput1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(firstNameLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ageInput1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(ageLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lastNameInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lastNameLabel1)
+                            .addComponent(emailInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailLabel1))
+                        .addGap(68, 68, 68))))
         );
         mainPanel1Layout.setVerticalGroup(
             mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,9 +254,13 @@ public class FormPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(emailInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(messageLabel1)
+                .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(messageLabel1)
+                    .addComponent(messageLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateInput, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientTypeLabel)
@@ -300,9 +311,10 @@ public class FormPanel extends javax.swing.JPanel {
         String message = messageInput1.getText();
         String type = jComboBox1.getSelectedItem().toString();
         String gender = "";
+        String date = dateInput.getDate().toString();
         
         if(genderButton.getSelection() != null){
-           gender = genderButton.getSelection().toString();
+           gender = genderButton.getSelection().getActionCommand();
         }
         
   
@@ -347,6 +359,7 @@ public class FormPanel extends javax.swing.JPanel {
             user.setGender(gender);
             user.setMessage(message);
             user.setIcon(icon);
+            user.setDate(date);
             
             
             ViewPanel newViewPanel = new ViewPanel(user); 
@@ -401,6 +414,7 @@ public class FormPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageInput1;
     private javax.swing.JLabel ageLabel1;
+    private com.toedter.calendar.JDateChooser dateInput;
     private javax.swing.JTextField emailInput1;
     private javax.swing.JLabel emailLabel1;
     private javax.swing.JTextField firstNameInput1;
@@ -421,6 +435,7 @@ public class FormPanel extends javax.swing.JPanel {
     private javax.swing.JPanel mainPanel1;
     private javax.swing.JTextArea messageInput1;
     private javax.swing.JLabel messageLabel1;
+    private javax.swing.JLabel messageLabel2;
     private javax.swing.JLabel patientTypeLabel;
     private javax.swing.JLabel patientTypeLabel1;
     private javax.swing.JButton submitButton1;

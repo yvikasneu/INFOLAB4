@@ -31,7 +31,8 @@ public class ViewPanel extends javax.swing.JPanel {
         ageValue.setText(user.getAge());
         messageValue.setText(user.getMessage());
         genderValue.setText(user.getGender());
-        patientLabelValue.setText(user.getType());
+        patientLabelValue.setText(user.getType());        
+        dateValue.setText(user.getDate());
         imageValue.setIcon(user.getIcon());
         
     }
@@ -63,6 +64,8 @@ public class ViewPanel extends javax.swing.JPanel {
         patientLabelValue = new javax.swing.JLabel();
         genderValue = new javax.swing.JLabel();
         imageValue = new javax.swing.JLabel();
+        firstNameLable8 = new javax.swing.JLabel();
+        dateValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(253, 206, 68));
         setPreferredSize(new java.awt.Dimension(700, 600));
@@ -86,6 +89,8 @@ public class ViewPanel extends javax.swing.JPanel {
 
         firstNameLable7.setText("Image:");
 
+        firstNameLable8.setText("Date:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,28 +98,36 @@ public class ViewPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstNameLable1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(firstNameLable)
-                        .addGap(43, 43, 43)
-                        .addComponent(firstNameLabel))
-                    .addComponent(firstNameLable2)
-                    .addComponent(firstNameLable3)
-                    .addComponent(firstNameLable4)
-                    .addComponent(firstNameLable5)
-                    .addComponent(firstNameLable6)
-                    .addComponent(firstNameLable7))
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstNameValue)
-                    .addComponent(titleLabel1)
-                    .addComponent(lastNameValue)
-                    .addComponent(ageValue)
-                    .addComponent(emailValue)
-                    .addComponent(messageValue)
-                    .addComponent(patientLabelValue)
-                    .addComponent(genderValue)
-                    .addComponent(imageValue))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstNameLable1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(firstNameLable)
+                                .addGap(43, 43, 43)
+                                .addComponent(firstNameLabel))
+                            .addComponent(firstNameLable2)
+                            .addComponent(firstNameLable3)
+                            .addComponent(firstNameLable4)
+                            .addComponent(firstNameLable5)
+                            .addComponent(firstNameLable6))
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstNameValue)
+                            .addComponent(titleLabel1)
+                            .addComponent(lastNameValue)
+                            .addComponent(ageValue)
+                            .addComponent(emailValue)
+                            .addComponent(messageValue)
+                            .addComponent(patientLabelValue)
+                            .addComponent(genderValue)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(firstNameLable8)
+                        .addGap(67, 67, 67)
+                        .addComponent(dateValue))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(firstNameLable7)
+                        .addGap(75, 75, 75)
+                        .addComponent(imageValue)))
                 .addContainerGap(303, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -152,16 +165,24 @@ public class ViewPanel extends javax.swing.JPanel {
                     .addComponent(firstNameLable6)
                     .addComponent(genderValue))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(dateValue)
+                        .addGap(1, 1, 1))
+                    .addComponent(firstNameLable8))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(firstNameLable7)
                     .addComponent(imageValue))
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ageValue;
+    private javax.swing.JLabel dateValue;
     private javax.swing.JLabel emailValue;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JLabel firstNameLable;
@@ -172,6 +193,7 @@ public class ViewPanel extends javax.swing.JPanel {
     private javax.swing.JLabel firstNameLable5;
     private javax.swing.JLabel firstNameLable6;
     private javax.swing.JLabel firstNameLable7;
+    private javax.swing.JLabel firstNameLable8;
     private javax.swing.JLabel firstNameValue;
     private javax.swing.JLabel genderValue;
     private javax.swing.JLabel imageValue;

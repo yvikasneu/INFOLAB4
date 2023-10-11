@@ -24,33 +24,45 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="firstNameLable1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="firstNameLable" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="firstNameLabel" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="firstNameLable1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="firstNameLable" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="firstNameLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="firstNameLable2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameLable3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameLable4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameLable5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameLable6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="firstNameValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="titleLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lastNameValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="ageValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="messageValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="patientLabelValue" min="-2" max="-2" attributes="0"/>
+                          <Component id="genderValue" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="firstNameLable2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="firstNameLable3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="firstNameLable4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="firstNameLable5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="firstNameLable6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="firstNameLable7" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="firstNameValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="titleLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lastNameValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="ageValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="messageValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientLabelValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="genderValue" min="-2" max="-2" attributes="0"/>
-                  <Component id="imageValue" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="firstNameLable8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="dateValue" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="firstNameLable7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="imageValue" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="303" max="32767" attributes="0"/>
           </Group>
@@ -98,11 +110,20 @@
                   <Component id="genderValue" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                      <Component id="dateValue" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="firstNameLable8" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="firstNameLable7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="imageValue" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="331" max="32767" attributes="0"/>
+              <EmptySpace pref="289" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -173,6 +194,13 @@
     <Component class="javax.swing.JLabel" name="genderValue">
     </Component>
     <Component class="javax.swing.JLabel" name="imageValue">
+    </Component>
+    <Component class="javax.swing.JLabel" name="firstNameLable8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Date:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dateValue">
     </Component>
   </SubComponents>
 </Form>
