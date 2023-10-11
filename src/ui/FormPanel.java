@@ -32,9 +32,9 @@ public class FormPanel extends javax.swing.JPanel {
     JPanel bottomPanel; 
     
     public FormPanel(JPanel bottomPanel){
+         this.bottomPanel = bottomPanel;
+         
         initComponents();
-        
-        this.bottomPanel = bottomPanel;
     }
 
 
@@ -138,6 +138,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderButton.add(jRadioButton2);
         jRadioButton2.setText("Male");
+        jRadioButton2.setActionCommand("MALE");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -146,6 +147,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderButton.add(jRadioButton3);
         jRadioButton3.setText("Female");
+        jRadioButton3.setActionCommand("FEMALE");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -154,6 +156,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderButton.add(jRadioButton4);
         jRadioButton4.setText("Others");
+        jRadioButton4.setActionCommand("OTHERS");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
@@ -266,7 +269,7 @@ public class FormPanel extends javax.swing.JPanel {
                     .addComponent(targetImage1))
                 .addGap(18, 18, 18)
                 .addComponent(submitButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -282,7 +285,7 @@ public class FormPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addComponent(mainPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -296,8 +299,14 @@ public class FormPanel extends javax.swing.JPanel {
         String email = emailInput1.getText();
         String message = messageInput1.getText();
         String type = jComboBox1.getSelectedItem().toString();
-        String gender = genderButton.getSelection().getActionCommand();
+        String gender = "";
         
+        if(genderButton.getSelection() != null){
+           gender = genderButton.getSelection().toString();
+        }
+        
+  
+         System.out.println(gender);
        
 
             Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
@@ -314,7 +323,11 @@ public class FormPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please enter a valid Email", "Validation Error", HEIGHT);
         } else if (message.length() == 0) {
             JOptionPane.showMessageDialog(this, "Message Should not empty", "Validation Error", HEIGHT);
-        } else if (file == null ){
+        } 
+        else if (gender == "") {
+            JOptionPane.showMessageDialog(this, "Please select your gender", "Validation Error", HEIGHT);
+        }
+        else if (file == null ){
          JOptionPane.showMessageDialog(this, "Please select the profile image", "Validation Error", HEIGHT);
         } else {
             
