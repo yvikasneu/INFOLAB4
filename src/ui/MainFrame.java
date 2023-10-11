@@ -5,6 +5,7 @@
 package ui;
 
 import java.awt.CardLayout;
+import models.Patient;
 
 /**
  *
@@ -18,6 +19,9 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
     }
+    
+    public ViewPanel newViewPanel; 
+    public FormPanel newFormPanel; 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,9 +104,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        FormPanel newFormPanel = new FormPanel(bottomPanel); 
+        if(newFormPanel == null) {
+             newFormPanel = new FormPanel(bottomPanel); 
+        }
+        
         bottomPanel.add(newFormPanel);
-
         CardLayout layout = (CardLayout) bottomPanel.getLayout(); 
         layout.next(bottomPanel);
         
@@ -110,7 +116,19 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ViewPanel newViewPanel = new ViewPanel(); 
+        if(newViewPanel == null) {
+             newViewPanel = new ViewPanel(); 
+        }
+        Patient userData = null; 
+        
+        if(newFormPanel != null){
+            userData = newFormPanel.getFieldsData();
+        }
+        
+        if(userData != null){
+            newViewPanel.setFieldsData(userData);
+        }
+        
         bottomPanel.add(newViewPanel);
 
         CardLayout layout = (CardLayout) bottomPanel.getLayout(); 

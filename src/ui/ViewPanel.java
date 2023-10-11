@@ -4,7 +4,7 @@
  */
 package ui;
 
-import models.User;
+import models.Patient;
 
 /**
  *
@@ -12,7 +12,7 @@ import models.User;
  */
 public class ViewPanel extends javax.swing.JPanel {
     
-    private User newUser; 
+    private Patient newUser; 
     /**
      * Creates new form FormPanel
      */
@@ -20,7 +20,19 @@ public class ViewPanel extends javax.swing.JPanel {
         initComponents();
     }
     
-    public ViewPanel(User user){
+    public void setFieldsData(Patient user){
+        firstNameValue.setText(user.getFirstName());
+        lastNameValue.setText(user.getLastName());
+        emailValue.setText(user.getEmail());
+        ageValue.setText(user.getAge());
+        messageValue.setText(user.getMessage());
+        genderValue.setText(user.getGender());
+        patientLabelValue.setText(user.getType());        
+        dateValue.setText(user.getDate());
+        imageValue.setIcon(user.getIcon());
+    }
+    
+    public ViewPanel(Patient user){
         
         this.newUser = user; 
         initComponents();

@@ -10,7 +10,7 @@ import javax.swing.Icon;
  *
  * @author vikas
  */
-public class User {
+public class Patient {
 
     /**
      * @return the date

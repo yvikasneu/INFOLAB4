@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import models.User;
+import models.Patient;
 
 /**
  *
@@ -44,6 +44,55 @@ public class FormPanel extends javax.swing.JPanel {
     public FormPanel() {
         initComponents();
     }
+    
+    public Patient getFieldsData () {
+        String firstName = firstNameInput1.getText();
+        String lastName = lastNameInput1.getText();
+        String age = ageInput1.getText(); 
+        String email = emailInput1.getText();
+        String message = messageInput1.getText();
+        String type = jComboBox1.getSelectedItem().toString();
+        String gender = "";
+        String date = null;
+        ImageIcon icon = null;
+        
+        if(genderButton.getSelection() != null){
+           gender = genderButton.getSelection().getActionCommand();
+        }
+        
+        if(dateInput.getDate() != null){
+            date = dateInput.getDate().toString(); 
+        }
+        
+        
+          try {
+            if(file != null){
+              img=ImageIO.read(file);
+               icon = new ImageIcon(img); 
+            }
+            
+            
+            Patient user = new Patient(); 
+            user.setAge(age);
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            user.setEmail(email);
+            user.setType(type);
+            user.setGender(gender);
+            user.setMessage(message);
+            user.setIcon(icon);
+            user.setDate(date);
+            
+            
+            return user;
+            
+            
+
+            }  catch(IOException e2){
+            return null;
+            }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -311,21 +360,24 @@ public class FormPanel extends javax.swing.JPanel {
         String message = messageInput1.getText();
         String type = jComboBox1.getSelectedItem().toString();
         String gender = "";
-        String date = dateInput.getDate().toString();
+        String date = null;
         
         if(genderButton.getSelection() != null){
            gender = genderButton.getSelection().getActionCommand();
         }
         
+        if(dateInput.getDate() != null){
+            date = dateInput.getDate().toString(); 
+        }
+        
   
-         System.out.println(gender);
        
 
-            Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
-            Matcher isValidEmail = pattern.matcher(email);
+        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+        Matcher isValidEmail = pattern.matcher(email);
            
            
-           if(firstName.length() == 0) {
+        if(firstName.length() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter a valid First Name", "Validation Error", HEIGHT);
         }else if (lastName.length() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter a valid Last Name", "Validation Error", HEIGHT);
@@ -350,7 +402,7 @@ public class FormPanel extends javax.swing.JPanel {
             img=ImageIO.read(file);
             ImageIcon icon = new ImageIcon(img); 
             
-            User user = new User(); 
+            Patient user = new Patient(); 
             user.setAge(age);
             user.setFirstName(firstName);
             user.setLastName(lastName);
